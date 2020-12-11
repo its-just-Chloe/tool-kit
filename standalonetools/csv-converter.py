@@ -10,8 +10,6 @@ root.title("CSV Converter")
 
 filecsv = StringVar()
 
-filename = ""
-
 
 # Converts , to ; and . to ,
 def us_to_eu():
@@ -36,13 +34,13 @@ def eu_to_us():
         out_file.write(data)
 
 
-entry = Label(root, text="Enter File Path:")
-entry.place(x=30, y=10)
+text = Label(root, text="Enter File Path:")
+text.place(x=30, y=10)
 
 fileentry = Entry(root, width=20, font=("Arial", 18, ""), textvariable=filecsv)
 fileentry.place(x=30, y=45)
 
-
+# Create Filedialog
 def setentry():
     name = fd.askopenfilename()
     fileentry.delete(0, END)
